@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:f="http://java.sun.com/jsf/core"   
+       >
+    <h:head>
+        <meta charset="utf-8" />
+        <title>Murach's Java Servlets and JSP</title>
+        <link rel="stylesheet" href="styles/main.css" type="text/css"/>
+    </h:head>
+    <h:body>
+        <h1>List view</h1>
+        <h:dataTable value="#{List.viewList}" var="l">
+
+    			<h:column>
+    				<!-- column header -->
+    				<f:facet name="header">List Name</f:facet>
+    				<!-- row record -->
+    				#{l.listName}
+    			</h:column>
+    			
+    			<h:column>
+    				<f:facet name="header">Decription </f:facet>
+    				#{l.description}
+    			</h:column>
+       			<h:column>
+    				<f:facet name="header">priority </f:facet>
+    				#{l.priority}
+    			</h:column>
+    			</h:dataTable>
+    </h:body>
+</html>
