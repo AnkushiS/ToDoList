@@ -18,7 +18,7 @@
         <h:form>
         <label class="pad_top">List title</label>
             <h:inputText id="listName" required="true"
-                         value="#{list.dolist.listName}"
+                         value="#{lists.dolist.listName}"
                          requiredMessage="List Name is required"/>
             <h:message showSummary="true" showDetail="false"
                        for="listName" class="error" />
@@ -27,7 +27,7 @@
              <br> </br>          
             <label class="pad_top">Description</label>          
             <h:inputText id="description" required="true"
-                         value="#{list.dolist.description}"
+                         value="#{lists.dolist.description}"
                          requiredMessage="one task is required"/>
             <h:message showSummary="true" showDetail="false"
                        for="description" class="error" /><br />
@@ -35,7 +35,7 @@
 			<br> </br>
 			<label class="pad_top">prirority low?high?medium?</label>          
             <h:inputText id="prirority" required="true"
-                         value="#{list.dolist.priority}"
+                         value="#{lists.dolist.priority}"
                          />
             <h:message showSummary="true" showDetail="false"
                        for="prirority" class="error" /><br />
@@ -45,17 +45,18 @@
 			
             <label>&nbsp;</label>
             <h:commandButton id="submit"
-                             action="#{list.insertlist}"
-                             value="Login" class="margin_left" >
+                             action="#{lists.insertlist}"
+                             value="Add List" class="margin_left" >
                              
-			<f:param name="useremail" value="#{emailList.user.email}" />
+		  <f:param name="useremail" value="#{emailList.user.email}" />
 		  <f:param 	name="dueDate" value="03/04/2016" />
           <f:param name="dateComp" value="" />
 		  <f:param name="statusid" value="1" />
-			                             
-                             
-                             
+	                
             </h:commandButton>
+             <h:commandButton id="return" action="index?faces-redirect=true"
+                             value="Return"/>
         </h:form>
+       
     </h:body>
 </html>

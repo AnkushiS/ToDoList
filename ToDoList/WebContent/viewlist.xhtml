@@ -7,28 +7,30 @@
        >
     <h:head>
         <meta charset="utf-8" />
-        <title>Murach's Java Servlets and JSP</title>
+        
         <link rel="stylesheet" href="styles/main.css" type="text/css"/>
     </h:head>
     <h:body>
         <h1>List view</h1>
-        <h:dataTable value="#{List.viewList}" var="l">
+        <h:form>
+        <h:dataTable value="#{lists.view_list}" var="ll" border="1">
 
     			<h:column>
-    				<!-- column header -->
-    				<f:facet name="header">List Name</f:facet>
-    				<!-- row record -->
-    				#{l.listName}
+    				
+    				<f:facet name="header">List Name</f:facet>#{ll.listName}
     			</h:column>
     			
     			<h:column>
     				<f:facet name="header">Decription </f:facet>
-    				#{l.description}
+    				#{ll.description}
     			</h:column>
        			<h:column>
     				<f:facet name="header">priority </f:facet>
-    				#{l.priority}
+    				#{ll.priority}
     			</h:column>
     			</h:dataTable>
+    			<h:commandButton id="return" action="index?faces-redirect=true"
+                             value="Return"/>
+    </h:form>
     </h:body>
 </html>
